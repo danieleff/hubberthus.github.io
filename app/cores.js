@@ -5,13 +5,13 @@ define(function (require) {
     		
     		core = {};
 			
-			$.getJSON("/cores/" + name + "/pinout.json")
+			$.getJSON("cores/" + name + "/pinout.json")
 			.done(function( pinout ) {
 				
 				core.pinout = pinout;
 			});
 			
-			$.getJSON("/cores/" + name + "/peripherals.json")
+			$.getJSON("cores/" + name + "/peripherals.json")
 			.done(function( peripherals ) {
 				
 				core.peripherals = peripherals;

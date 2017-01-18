@@ -1,6 +1,6 @@
 define(function (require) {
 	
-	var module_names = ["ESP-WROOM-32", "SparkFun_ESP32_Thing"];
+	var module_names = ["ESP-WROOM-32", "SparkFun_ESP32_Thing", "STM32-Maple_Mini", "STM32-Blue_Pill"];
 	
 	generatePinMap = function ( module ) {
 		
@@ -21,10 +21,10 @@ define(function (require) {
 
     		module_names.forEach(function( name ) {
 
-				$.getJSON("/modules/" + name + "/module.json")
+				$.getJSON("modules/" + name + "/module.json")
 				.done(function( module ) {
 
-					module.image = "/modules/" + name + "/module.png";
+					module.image = "modules/" + name + "/module.png";
 					generatePinMap(module);
 					module_list.push(module);
 				});
